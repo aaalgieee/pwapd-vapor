@@ -15,7 +15,8 @@ public func configure(_ app: Application) async throws {
         username: Environment.get("DATABASE_USERNAME") ?? "gab",
         password: Environment.get("DATABASE_PASSWORD") ?? "gab",
         database: Environment.get("DATABASE_NAME") ?? "pwapd",
-        tls: .prefer(try .init(configuration: .clientDefault)))
+        tls: .disable
+        )
     ), as: .psql)
 
     app.migrations.add(CreatePost())

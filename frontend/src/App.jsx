@@ -13,7 +13,7 @@ const BlogWebsite = () => {
   }, []);
 
   const fetchPosts = () => {
-    axios.get('http://localhost:8080/blogs')
+    axios.get('http://127.0.0.1:8080/blogs')
       .then(response => {
         setPosts(response.data);
       })
@@ -25,7 +25,7 @@ const BlogWebsite = () => {
   const handleAddPost = () => {
     if (newPost.title && newPost.content) {
       const newPostWithId = { ...newPost };
-      axios.post('http://localhost:8080/blogs', newPostWithId, { headers: { 'Content-Type': 'application/json' } })
+      axios.post('http://127.0.0.1:8080/blogs', newPostWithId, { headers: { 'Content-Type': 'application/json' } })
         .then(response => {
           setPosts([...posts, response.data]);
           setNewPost({ title: '', content: '' });
@@ -38,7 +38,7 @@ const BlogWebsite = () => {
 
 
   const handleDeletePost = (id) => {
-    axios.delete(`http://localhost:8080/blogs/${id}`)
+    axios.delete(`http://127.0.0.1:8080/blogs/${id}`)
       .then(() => {
         setPosts(posts.filter(post => post.id !== id));
       })
