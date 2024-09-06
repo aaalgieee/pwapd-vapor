@@ -5,11 +5,13 @@ This repo simply showcase the power of Vapor on Swift creating APIs and such for
 
 
 ## Installation - macOS
+### Homebrew
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
 
-Download and Install Homebrew.
 
-Once installed run:
-
+### Vapor
 ```bash
  brew install vapor
  cd pwapd-vapor
@@ -25,19 +27,23 @@ Once installed run:
 
 ## Installation - Linux
 
-Download and Install Swiftly.
+### Swiftly
 ```bash
 curl -L https://swiftlang.github.io/swiftly/swiftly-install.sh | bash
 ```
-Once installed run:
 
 
+### Vapor Toolbox
  ```bash
 git clone https://github.com/vapor/toolbox.git
 cd toolbox
 make install
  ```
-
+### Run the Server
+```bash
+cd pwapd-vapor
+swift run
+```
   ### Frontend
  ```bash
  cd frontend
